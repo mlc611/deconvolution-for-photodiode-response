@@ -1,8 +1,6 @@
-# Deconvolution for Photodiode Characterization
-
 Physicists are trained to observe when some essential feature of a system is preserved through transformation, a property that is called [symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics)). Identifying symmetry can be extremely useful when problem solving, since a tool that was developed to solve one problem can then be applied to a new problem if we can show that the relevant essential feature in the new problem is the same as in the old one. Here, I'm going to explore the exsistence of symmetry between a problem characterizing photodiodes and a common image processing technique used in microscopy. If symmetry exists, then common image processing software can be used to transform raw data from a photodiode into a more useful representation of the photodiode's behavior.
 
-## Photodiode Response Maps
+# Photodiode Response Maps
 
 Photodiodes are devices that accept photons and output an electrical current. They can be tailored to a variety of wavelengths including ultraviolet, visible, and infrared. They're used as part of the [CMOS imagers in your smartphone](https://en.wikipedia.org/wiki/Active-pixel_sensor), and they can be specialized for applications such as [single-photon detection](https://en.wikipedia.org/wiki/Single-photon_avalanche_diode) and can even be applied to sensing particles other than photons, such as [high energy electrons in 4D-STEM microscopy](https://arxiv.org/abs/2111.05889).
 
