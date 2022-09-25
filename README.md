@@ -43,7 +43,7 @@ This 1-D example of convolution is directly applicable to the knife edge techniq
 
 Let's begin by testing a [textbook example](https://scikit-image.org/docs/stable/auto_examples/filters/plot_deconvolution.html) of PSF deconvolution.
 
-#############################
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -83,8 +83,8 @@ ax[2].set_title('Restoration using\nRichardson-Lucy')
 fig.subplots_adjust(wspace=0.02, hspace=0.2,
                     top=0.9, bottom=0.05, left=0, right=1)
 plt.show()
+```
 
-#############################
 Now, let's model a photodiode being scanned by a laser.
 #### Photodiode
 We'll model the photodiode as a square with perfectly homogenous response across its entire area.
