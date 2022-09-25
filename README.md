@@ -13,7 +13,7 @@ Photodiodes have a sensing surface that can be smaller than 1 $\mu$m<sup>2</sup>
 Making a response map can very simple. Simply scan a small laser beam across the surface of the device and measure the electric current at each point. This works very well so long as the size of the spot is much smaller than the device.
 
 I am interested in what we can do when the spot of the laser beam is not guaranteed to be much smaller than the device. The smallest spot of light we can typically generate is limited by diffraction, so it ends up being an [Airy disk](https://en.wikipedia.org/wiki/Airy_disk), whose size increases with wavelength and decreases as numerical aperture is increased. For microsocpe objectives, Airy disk sizes on the order of microns are typical.
-![Airy Disk](airy-disk.png | width=10)
+![Airy Disk](airy-disk.png)
 So suppose that we can generate an Airy disk that is approximately 1/10th the size of the photodiode. We would then be able to make a response map with approximately 10x10 resolution by simply stepping the Airy disk across the device. But what if we want higher resolution, and we're unable to shrink the light spot size any further? This problem sounds analagous to a problem found in microscopy.
 
 ## Deconvolution in Microscopy
