@@ -8,7 +8,7 @@ Photodiodes are devices that accept photons and output an electrical current. Th
 
 Photodiodes have a sensing surface that can be smaller than 1 $\mu$m<sup>2</sup> or greater than 1 cm<sup>2</sup>. In an ideal photodiode, the amount of current that's generated will be independent of the location that the photons land on. In practice, the response may be inhomogenous, such as having increased or decreased sensitivity at the edges compared to the center. I wish to make response maps of photodiodes in order to reveal any inhomogeneities for further development. Here are some response maps from [a CERN sensor for high energy physics](https://journals.jps.jp/doi/pdf/10.7566/JPSCP.34.010009).
 
-![Response Maps](resources/response-maps.png)
+![Response Maps](response-maps.png)
 
 Making a response map can very simple. Simply scan a small laser beam across the surface of the device and measure the electric current at each point. This works very well so long as the size of the spot is much smaller than the device.
 
