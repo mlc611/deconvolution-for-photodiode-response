@@ -1,5 +1,6 @@
 title: Deconvolution Algorithm to Improve Photodiode Response Map
 description: exploiting symmetry to apply a common image processing technique to photodiode characterization
+theme: cayman
 plugins:
   - jekyll-relative-links
 relative_links:
