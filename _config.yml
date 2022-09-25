@@ -1,3 +1,5 @@
+title: Deconvolution Algorithm to Improve Photodiode Response Map
+description: exploiting symmetry to apply a common image processing technique to photodiode characterization
 plugins:
   - jekyll-relative-links
 relative_links:
@@ -12,5 +14,3 @@ include:
   - CONTRIBUTING.md
   - ISSUE_TEMPLATE.md
   - PULL_REQUEST_TEMPLATE.md
-title: Deconvolution Algorithm to Improve Photodiode Response Map
-description: exploiting symmetry to apply a common image processing technique to photodiode characterization
