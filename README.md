@@ -20,7 +20,7 @@ So suppose that we can generate an Airy disk that is approximately 1/10th the si
 
 In microscopy, images typically contain some amount of blur due to the fundamental limit of the optics used. Perfect optics would map a single point of data from the sample to a single point on the detector. However, optical imperfections and diffraction limits cause the information from a point in the sample to be smeared across some area on the detector. This effect can be modelled by  a [point spread function (PSF)](https://en.wikipedia.org/wiki/Point_spread_function) that describes how each point in an image is smeared. When microscopists are able to measure or estimate the PSF, they can use [deconvolution algorithms](https://imagej.net/imaging/deconvolution) to regain some of the contrast that is lost by blurring. [This paper](http://bigwww.epfl.ch/publications/lefkimmiatis1302.html) demonstrates a *(a)* blurry image of a floursecent cell being deconvolved *(c & d)* to generate images closer to the ground truth *(b)*.
 
-<img src="deconvolved-cells.png" alt="Deconvolution used to enhance image of cells" style="width:50%" align="center">
+<img src="https://github.com/mlc611/deconvolution-for-photodiode-response/blob/746aef7393918517737e91e9d2c20e5e4a1c7cc0/deconvolved-cells.png" alt="Deconvolution used to enhance image of cells" style="width:50%" align="center">
 
 The technique can be extended to consider the 3-D PSF and devonvolve image stacks to [recover 3D details](http://bigwww.epfl.ch/deconvolution/).
 
