@@ -1,4 +1,5 @@
 title: Deconvolution Algorithm to Improve Photodiode Response Map
+description: Cayman is a clean, responsive theme for GitHub Pages.
 plugins:
   - jekyll-relative-links
 relative_links:
@@ -13,3 +14,4 @@ include:
   - CONTRIBUTING.md
   - ISSUE_TEMPLATE.md
   - PULL_REQUEST_TEMPLATE.md
+theme: jekyll-theme-cayman
