@@ -4,22 +4,21 @@ Physicists are trained to notice and exploit physical [symmetry](https://en.wiki
 Here, we're going to explore the exsistence of symmetry between a problem in photodiode development and a problem in micrsocopy. If symmetry exists, then common image processing software employed in microscopy can be used to help us study photodiode behavior.
 
 ## Photodiode Response Maps
-
 Photodiodes are devices that accept photons and output an electrical current. They can be tailored to a variety of wavelengths including ultraviolet, visible, and infrared. They're used as part of the [CMOS imagers in your smartphone](https://en.wikipedia.org/wiki/Active-pixel_sensor), and they can be specialized for applications such as [single-photon detection](https://en.wikipedia.org/wiki/Single-photon_avalanche_diode) and can even be applied to sensing particles other than photons, such as [high energy electrons in 4D-STEM microscopy](https://arxiv.org/abs/2111.05889).
 
 Photodiodes have a sensing surface that can be smaller than 1 $\mu$m<sup>2</sup> or greater than 1 cm<sup>2</sup>. In an ideal photodiode, the amount of current that's generated will be independent of the location that the photons land on. In practice, the response may be inhomogenous, such as having increased or decreased sensitivity at the edges compared to the center. I wish to make response maps of photodiodes in order to reveal any inhomogeneities for further development. Here are some response maps from [a CERN sensor for high energy physics](https://journals.jps.jp/doi/pdf/10.7566/JPSCP.34.010009).
 
 ![Response Maps](response-maps.png)
-https://github.com/mlc611/deconvolution-for-photodiode-response/blob/e5028ae82ed87f895d7b45e74537a2db298c8108/response-maps.png
 
-Making a response map can very simple. Simply scan a small laser beam across the surface of the device and measure the electric current at each point. This works very well so long as the size of the spot is much smaller than the device.
+Making a response map can very simple: Simply scan a small laser beam across the surface of the device and measure the electric current at each point. This works very well so long as the size of the spot is much smaller than the device.
 
-I am interested in what we can do when the spot of the laser beam is not guaranteed to be much smaller than the device. The smallest spot of light we can typically generate is limited by diffraction, so it ends up being an [Airy disk](https://en.wikipedia.org/wiki/Airy_disk), whose size increases with wavelength and decreases as numerical aperture is increased. For microsocpe objectives, Airy disk sizes on the order of microns are typical.
+There are cases when the laser beam is not guaranteed to be much smaller than the device. The smallest spot of light we can typically generate is limited by diffraction, so it ends up being an [Airy disk](https://en.wikipedia.org/wiki/Airy_disk), whose size increases with wavelength and decreases as numerical aperture is increased. For microsocpe objectives, Airy disk sizes on the order of microns are typical.
+
 ![Airy Disk](airy-disk-from-zeiss.png)
+
 So suppose that we can generate an Airy disk that is approximately 1/10th the size of the photodiode. We would then be able to make a response map with approximately 10x10 resolution by simply stepping the Airy disk across the device. But what if we want higher resolution, and we're unable to shrink the light spot size any further? This problem sounds analagous to a problem found in microscopy.
 
 ## Deconvolution in Microscopy
-
 In microscopy, images typically contain some amount of blur due to the fundamental limit of the optics used. Perfect optics would map a single point of data from the sample to a single point on the detector. However, optical imperfections and diffraction limits cause the information from a point in the sample to be smeared across some area on the detector. This effect can be modelled by  a [point spread function (PSF)](https://en.wikipedia.org/wiki/Point_spread_function) that describes how each point in an image is smeared. When microscopists are able to measure or estimate the PSF, they can use [deconvolution algorithms](https://imagej.net/imaging/deconvolution) to regain some of the contrast that is lost by blurring. [This paper](http://bigwww.epfl.ch/publications/lefkimmiatis1302.html) demonstrates a *(a)* blurry image of a floursecent cell being deconvolved *(c & d)* to generate images closer to the ground truth *(b)*.
 
 ![Deconvolved Cells](deconvolved-cells.png)
@@ -29,7 +28,6 @@ The technique can be extended to consider the 3-D PSF and devonvolve image stack
 ![3D Deconvolution](3D-deconvolve.png)
 
 ## Theoretical Basis for Improving a Response Map
-
 If we scan a laser spot across the photodiode, and we measure the electrical current from the photodiode at each point of the scan, we will end up with a response map that is [convolved](https://en.wikipedia.org/wiki/Convolution) with the size and shape of the laser spot. The 1-D illustration below shows how movement generates a convolved response. Applied to our case, the blue curve represents the response of some region of the photodiode, the red curve represents the laser spot, and the black curve represents the convolved function that we'd actually measure as electric current. As the laser scans across the device, the overlap of the laser spot and the device changes, and so the current generated changes.
 
 ![Convolution](1D-convolution.gif)
@@ -40,8 +38,7 @@ This 1-D example of convolution is directly applicable to the knife edge techniq
 
 ![Laser Beam Profiling](knife-edge.png)
 
-## Response Map Enhancement with Simulated Data
-
+## Deconvolution Example
 Let's begin by testing a [textbook example](https://scikit-image.org/docs/stable/auto_examples/filters/plot_deconvolution.html) of PSF deconvolution.
 
 ```python
@@ -87,6 +84,8 @@ plt.show()
 ```
 ![Textbook Deconvolution](textbook-decon.png)
 
+
+## Response Map Enhancement with Simulated Data
 Now, let's model a photodiode being scanned by a laser.
 #### Photodiode
 We'll model the photodiode as a square with perfectly homogenous response across its entire area.
@@ -104,6 +103,7 @@ We will simulate the measured response map by convolving the PSF with the Ideal 
 1. For laser positions well inside the photodiode, the response is one.
 1. For laser positions centered just outside of the photodiode, we measure a small response because the edge of the laser spot is landing on the photodiode.
 1. For laser positions centered just inside the edge of the photodiode, we measure an appreciable response, but some response is lost because the edge of the laser spot is landing off of the photodiode.
+
 #### Recovered Response Map
 We use the Richardson Lucy algorithm to recover an estimate of the ideal response map. We note that deconvolution is an imperfect process and that we'll have to take care when interpreting any "recovered" data set.
 
