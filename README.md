@@ -182,9 +182,8 @@ This result indicates promise for recovering response maps of photodiodes. We no
 With so much [prior work](http://bigwww.epfl.ch/deconvolution/) in deconvolution for microscopy, it seems likely that existing algorithms could be adapted to this problem. Note that while deconvolution in microscopy is often thought of as widefield approach, [confocal implementations](https://doi.org/10.1002/jemt.20294) exist as well. This is particularly relevant to characterizing photodiodes, as the process of stepping a laser spot is essentially a confocal approach.
 
 We expect this technique to be useful when:
-1. The wavelength and aperture are such that we are limited by the spot size that we are able to project. This is especially problematic in infrared systems which have long wavelengths and specizlized optics that may preclude extreme apertures as can be employed in the visible spectrum.
+1. The wavelength and aperture are such that we are limited by the spot size that we are able to project. This may occur in infrared systems which have long wavelengths and which rely on specizlized optics that may preclude using the [fast optics](https://en.wikipedia.org/wiki/Lens_speed) typically used to achieve minimum-sized Airy disks in more forigiving poritions of the spectrum.
 1. We are able to move the projected light spot in step sizes that are much smaller than the size of the light spot itself.
 
 ## Acknowledgements
 This idea was inspired by a discussion with Kevan and his work [performing deconvolution with signal-dependent PSFs in astronomy](https://arxiv.org/pdf/1805.09413.pdf).
-
