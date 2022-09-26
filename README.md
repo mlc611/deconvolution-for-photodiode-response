@@ -1,4 +1,7 @@
-Physicists are trained to observe when some essential feature of a system is preserved through transformation, a property that is called [symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics)). Identifying symmetry can be extremely useful when problem solving, since a tool that was developed to solve one problem can then be applied to a new problem if we can show that the relevant essential feature in the new problem is the same as in the old one. Here, I'm going to explore the exsistence of symmetry between a problem characterizing photodiodes and a common image processing technique used in microscopy. If symmetry exists, then common image processing software can be used to transform raw data from a photodiode into a more useful representation of the photodiode's behavior.
+# Symmetry in Problem Solving
+Physicists are trained to notice and exploit physical [symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics)) to solve problems. From Wikipedia, "a symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation." If we are able to identify some essential feature that is the same between two systems, then we can apply the tools developed for one system to the other.
+
+Here, we're going to explore the exsistence of symmetry between a problem in photodiode development and a problem in micrsocopy. If symmetry exists, then common image processing software employed in microscopy can be used to help us study photodiode behavior.
 
 # Photodiode Response Maps
 
