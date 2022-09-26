@@ -85,6 +85,7 @@ fig.subplots_adjust(wspace=0.02, hspace=0.2,
                     top=0.9, bottom=0.05, left=0, right=1)
 plt.show()
 ```
+![Textbook Deconvolution](textbook-decon.png)
 
 Now, let's model a photodiode being scanned by a laser.
 #### Photodiode
@@ -141,7 +142,7 @@ psf_pad_width = int((pad_width * 2 + size[0] - psf_size) / 2)
 psf_padded = np.pad(psf, psf_pad_width, mode='constant', constant_values=0)
 
 # Restore response map using Richardson-Lucy algorithm
-number_iterations = 5
+number_iterations = 250
 deconvolved_RL = restoration.richardson_lucy(convolved_response_map, psf, number_iterations)
 
 
@@ -168,12 +169,10 @@ fig.subplots_adjust(wspace=0.02, hspace=0.2,
                     top=0.9, bottom=0.05, left=0, right=1)
 plt.show()
 ```
+![Devonvolved Photodiode Response](250-its.png)
 
 
-The code above runs the R-L algorithm with 5 iterations. The result acquired for 70 iterations, which takes longer to run, is shown below:
-
-![result of deconvolution](70-iterations.png)
-
+## Conclusion
 This result indicates promise for recovering response maps of photodiodes. We note that the result is imperfect. To implement this technique in an actual experiment would require extreme care regarding:
 1. The deconvolution algorithm chosen
 1. Step size of the laser spot
@@ -181,3 +180,11 @@ This result indicates promise for recovering response maps of photodiodes. We no
 1. How changes in the PSF and in the Ground Truth affect error
 
 With so much [prior work](http://bigwww.epfl.ch/deconvolution/) in deconvolution for microscopy, it seems likely that existing algorithms could be adapted to this problem. Note that while deconvolution in microscopy is often thought of as widefield approach, [confocal implementations](https://doi.org/10.1002/jemt.20294) exist as well. This is particularly relevant to characterizing photodiodes, as the process of stepping a laser spot is essentially a confocal approach.
+
+We expect this technique to be useful when:
+1. The wavelength and aperture are such that we are limited by the spot size that we are able to project. This is especially problematic in infrared systems which have long wavelengths and specizlized optics that may preclude extreme apertures as can be employed in the visible spectrum.
+1. We are able to move the projected light spot in step sizes that are much smaller than the size of the light spot itself.
+
+## Acknowledgements
+This idea was inspired by a discussion with Kevan and his work [performing deconvolution with signal-dependent PSFs in astronomy](https://arxiv.org/pdf/1805.09413.pdf).
+
