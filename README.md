@@ -1,12 +1,18 @@
 ## Symmetry in Problem Solving
-Physicists are trained to notice and exploit physical [symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics)) to solve problems. From Wikipedia, "a symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation." If we are able to identify some essential feature that is the same between two systems, then we can apply the tools developed for one system to the other.
+Physicists are trained to notice and exploit physical [symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics)) to solve problems. From Wikipedia, "a symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation." If we are able to identify some essential feature that is the same between two systems, we can apply the tools developed for one system to the other.
 
 Here, we're going to explore the exsistence of symmetry between a problem in photodiode development and a problem in micrsocopy. If symmetry exists, then common image processing software employed in microscopy can be used to help us study photodiode behavior.
 
 ## Photodiode Response Maps
-Photodiodes are devices that accept photons and output an electrical current. They can be tailored to a variety of wavelengths including ultraviolet, visible, and infrared. They're used as part of the [CMOS imagers in your smartphone](https://en.wikipedia.org/wiki/Active-pixel_sensor), and they can be specialized for applications such as [single-photon detection](https://en.wikipedia.org/wiki/Single-photon_avalanche_diode) and can even be applied to sensing particles other than photons, such as [high energy electrons in 4D-STEM microscopy](https://arxiv.org/abs/2111.05889).
+Photodiodes are devices that accept photons and output an electric current. They can be tailored to a variety of wavelengths including ultraviolet, visible, and infrared. They're used as part of the [CMOS imagers in your smartphone](https://en.wikipedia.org/wiki/Active-pixel_sensor). They can be specialized for applications such as [single-photon detection](https://en.wikipedia.org/wiki/Single-photon_avalanche_diode) and can even be applied to sensing particles other than photons, such as [high energy electrons in 4D-STEM microscopy](https://arxiv.org/abs/2111.05889).
 
-Photodiodes have a sensing surface that can be smaller than 1 &mu;m<sup>2</sup> or greater than 1 cm<sup>2</sup>. In an ideal photodiode, the amount of current that's generated will be independent of the location that the photons land on. In practice, the response may be inhomogenous, such as having increased or decreased sensitivity at the edges compared to the center. I wish to make response maps of photodiodes in order to reveal any inhomogeneities for further development. Here are some response maps from [a CERN sensor for high energy physics](https://journals.jps.jp/doi/pdf/10.7566/JPSCP.34.010009).
+Photodiodes have a sensing surface that can be smaller than 1 &mu;m<sup>2</sup> or greater than 1 cm<sup>2</sup>. Typically, designers want photodiodes to have uniform response across the entire area of the device, so that photons landing on one part of the device generate the same amount of electric current as photons landing on another part of the device. In practice, the response may be inhomogenous, such as having increased or decreased sensitivity at the edges compared to the center. 
+
+
+EXPLAIN MAP & JUSTIFICATION
+
+
+Here are some response maps from [a CERN sensor for high energy physics](https://journals.jps.jp/doi/pdf/10.7566/JPSCP.34.010009).
 
 ![Response Maps](response-maps.png)
 
