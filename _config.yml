@@ -16,6 +16,6 @@ include:
 theme: jekyll-theme-cayman
 show_downloads: false
 google_analytics: G-THNRVSE8J8
-title: Mapping photodiodes with deconvolution
+title: Making photodiode response maps beyond the diffraction limit
 description: Applying a microscopy technique to semiconductor characterization
 
