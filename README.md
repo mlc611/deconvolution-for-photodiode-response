@@ -1,7 +1,7 @@
 ## Symmetry in Problem Solving
 Physicists are trained to notice physical symmetry and exploit it to solve problems. When one can identify that some essential feature is the same in two different systems, then the tools and techniques developed to solve problems in the first system can be applied to solve problems in the second system.
 
-We do this intuitively all the time. When we encounter a keyboard, it doesn't matter whether it's on a laptop, phone, or typewriter. We know what to expect when we press the keys because we're familiar with the essence of a keyboard. The fun often begins in situations when we suspect that symmetry exists, but it's not immediately obvious.
+We do this intuitively all the time. When we encounter a keyboard, it doesn't matter whether it's on a laptop, phone, or typewriter. We know what to expect when we press the keys because we're familiar with the essence of a keyboard. Challenges may arise when a feature that appears to be preserved has actually shifted subtly, such as if the keyboard appears familiar, but has actually been set up to type out foreign characters. The fun often begins in situations when we suspect that sufficient symmetry exists to help us, but it's not immediately obvious. 
 
 >"A symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation."  -[Wikipedia entry on symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics))
 
@@ -169,7 +169,7 @@ fig.subplots_adjust(wspace=0.02, hspace=0.2,
                     top=0.9, bottom=0.05, left=0, right=1)
 plt.show()
 ```
-![Devonvolved Photodiode Response](250-its.png)
+![Devonvolved Photodiode Response](128-iterations.png)
 
 ## Evaluating the output
 #### Measured Response Map
