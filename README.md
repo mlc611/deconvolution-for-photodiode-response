@@ -1,7 +1,11 @@
 ## Symmetry in Problem Solving
-Physicists are trained to notice and exploit physical [symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics)) to solve problems. From Wikipedia, "a symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation." If we are able to identify some essential feature that is the same between two systems, we can apply the tools developed for one system to the other.
+Physicists are trained to notice physical symmetry and exploit it to solve problems. When we're able to identify that some essential feature is the same in two different systems, then no matter how different those systems appear, the tools and techniques developed to solve problems in the first system can then be applied to solve problems in the new system.
 
-Here, we're going to explore the exsistence of symmetry between a problem in photodiode development and a problem in micrsocopy. If symmetry exists, then common image processing software employed in microscopy can be used to help us study photodiode behavior.
+We all do this intuitively to some degree. When we encounter a keyboard, it doesn't matter whether it's on a laptop, phone, or typewriter. We know what to expect when we press the keys because we're familiar with the essence of a keyboard. The fun often begins when we suspect that symmetry exists, but it's not immediately obvious.
+
+>"A symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation." [Wikipedia entry on symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics))
+
+Here, we're going to explore the exsistence of symmetry between a problem in photodiode development and a problem in micrsocopy. If symmetry exists, then common image processing software employed in microscopy can be used to help us study photodiode behavior and improve designs and semiconductor processing techniques.
 
 ## Photodiode Response Maps
 Photodiodes are devices that accept photons and output an electric current. They can be tailored to a variety of wavelengths including ultraviolet, visible, and infrared. They're used as part of the [CMOS imagers in your smartphone](https://en.wikipedia.org/wiki/Active-pixel_sensor). They can be specialized for applications such as [single-photon detection](https://en.wikipedia.org/wiki/Single-photon_avalanche_diode) and can even be applied to sensing particles other than photons, such as [high energy electrons in 4D-STEM microscopy](https://arxiv.org/abs/2111.05889).
