@@ -1,4 +1,5 @@
 title: Deconvolution for Photodiode Response Maps
+description: Exploring the applicability of a microscopy tehcnique to semiconductor characterization
 plugins:
   - jekyll-relative-links
   - jekyll-remote-theme
@@ -14,4 +15,6 @@ include:
   - CONTRIBUTING.md
   - ISSUE_TEMPLATE.md
   - PULL_REQUEST_TEMPLATE.md
-theme: jekyll-theme-minima
+theme: jekyll-theme-cayman
+show_downloads: false
+google_analytics: G-THNRVSE8J8
