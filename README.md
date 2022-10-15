@@ -1,16 +1,16 @@
 ## Symmetry in Problem Solving
-Physicists are trained to notice physical symmetry and exploit it to solve problems. When one can identify that some essential feature is the same in two different systems, then the tools and techniques developed to solve problems in the first system can be applied to solve problems in the new system.
+Physicists are trained to notice physical symmetry and exploit it to solve problems. When one can identify that some essential feature is the same in two different systems, then the tools and techniques developed to solve problems in the first system can be applied to solve problems in the second system.
 
 We do this intuitively all the time. When we encounter a keyboard, it doesn't matter whether it's on a laptop, phone, or typewriter. We know what to expect when we press the keys because we're familiar with the essence of a keyboard. The fun often begins in situations when we suspect that symmetry exists, but it's not immediately obvious.
 
 >"A symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation."  -[Wikipedia entry on symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics))
 
-Here, we're going to explore the exsistence of symmetry between a problem in photodiode development and a problem in micrsocopy. If symmetry exists, then common image processing software employed in microscopy can be used to help us study photodiode behavior and improve designs and semiconductor processing techniques.
+Here, we're going to explore the exsistence of symmetry between a problem in photodiode development and a problem in micrsocopy. If symmetry exists, then common image processing software employed in microscopy could be used to help us improve photodiode designs and processing techniques.
 
 ## Photodiode Response Maps
-Photodiodes are devices that accept photons and output an electric current. They can be tailored to a variety of wavelengths including ultraviolet, visible, and infrared. They're used as part of the [CMOS imagers in your smartphone](https://en.wikipedia.org/wiki/Active-pixel_sensor). They can be specialized for applications such as [single-photon detection](https://en.wikipedia.org/wiki/Single-photon_avalanche_diode) and can even be applied to sensing particles other than photons, such as [high energy electrons in 4D-STEM microscopy](https://arxiv.org/abs/2111.05889).
+Photodiodes are highly ubiquitous devices that measure incoming photons. They're used as part of the [CMOS imagers in your smartphone](https://en.wikipedia.org/wiki/Active-pixel_sensor). They can be specialized for applications such as [single-photon detection](https://en.wikipedia.org/wiki/Single-photon_avalanche_diode) and can even be applied to sensing particles other than photons, such as [high energy electrons in 4D-STEM microscopy](https://arxiv.org/abs/2111.05889).
 
-Photodiodes have a sensing surface that can be smaller than 1 &mu;m<sup>2</sup> or greater than 1 cm<sup>2</sup>. Typically, designers want photodiodes to have uniform response across the entire area of the device, so that photons landing on one part of the device generate the same signal as photons landing on another part of the device. In practice, the response may be inhomogenous, such as having increased or decreased sensitivity at the edges compared to the center. Response maps are used to visualize any inhomogeneities within the photodiode.
+Photodiodes have a sensing surface that can be smaller than 1 &mu;m<sup>2</sup> or greater than 1 cm<sup>2</sup>. Typically, designers want photodiodes to have uniform response across the entire area of the device, so that photons landing on one part of the device generate the same signal as photons landing on another part of the device. In practice, the response may be inhomogenous, such as having increased or decreased sensitivity at the edges compared to the center. Response maps are used to visualize any inhomogeneities within the photodiode and help improve the design.
 
 Here are some response maps from [a CERN sensor for high energy physics](https://journals.jps.jp/doi/pdf/10.7566/JPSCP.34.010009):
 
@@ -126,13 +126,13 @@ def gkern(kernlen, nsig):
 # in our true response map, the photodiode is represented by the 256x256 array
 # with response value = 1. the border region has response value = 0.
 size = (256,256)
-pad_width = 128
+pad_width = 180
 truth_response_map = np.ones(size)
 truth_response_map = np.pad(truth_response_map, pad_width, mode='constant', constant_values=0)
 
 # define our laser spot to be a gaussian spot
-spot_array_size = 200
-spot = gkern(spot_array_size,2.9)
+spot_array_size = 240
+spot = gkern(spot_array_size,2.75)
 
 # simulate the measured response map
 convolved_response_map = conv2(truth_response_map, spot, 'same')
@@ -192,6 +192,6 @@ We expect this technique may be useful when:
 1. The wavelength and numerical aperture are such that we are forced to interrogate the photodiode with a spot that is larger than the features we wish to study.
 1. We are able to move the projected light spot in step sizes as small as the features we wish to study.
 
-With so much [prior work](http://bigwww.epfl.ch/deconvolution/) in deconvolution for microscopy, it seems likely that existing algorithms could be adapted to this problem. Note that while deconvolution in microscopy is often thought of as widefield approach, [confocal implementations](https://doi.org/10.1002/jemt.20294) exist as well. Deconvolution algorithms used in confocal microscopy may be particularly relevant to characterizing photodiodes since the process of stepping a laser spot is essentially a confocal approach.
+With so much [prior work](http://bigwww.epfl.ch/deconvolution/) in deconvolution for microscopy, it seems likely that existing algorithms could be adapted to this problem. Note that while deconvolution in microscopy is often thought of as widefield approach, [confocal implementations](https://doi.org/10.1002/jemt.20294) exist as well. Deconvolution algorithms used in confocal microscopy may be particularly relevant to characterizing photodiodes since the process of stepping a laser spot is essentially a confocal approach. In fact, the symmetry is so complete that one could consider generating a photodiode response map with a laser spot to be a form of confocal microscopy in which the measured signal is electrons from the device rather than photons from the sample.
 ## Acknowledgements
 This idea was inspired by a discussion with Kevan and his work [performing deconvolution with signal-dependent PSFs in astronomy](https://arxiv.org/pdf/1805.09413.pdf).
