@@ -1,7 +1,7 @@
 ## Symmetry in Problem Solving
-Physicists are trained to notice physical symmetry and exploit it to solve problems. When we're able to identify that some essential feature is the same in two different systems, then no matter how different those systems appear, the tools and techniques developed to solve problems in the first system can then be applied to solve problems in the new system.
+Physicists are trained to notice physical symmetry and exploit it to solve problems. When one can identify that some essential feature is the same in two different systems, then the tools and techniques developed to solve problems in the first system can then be applied to solve problems in the new system.
 
-We all do this intuitively to some degree. When we encounter a keyboard, it doesn't matter whether it's on a laptop, phone, or typewriter. We know what to expect when we press the keys because we're familiar with the essence of a keyboard. The fun often begins when we suspect that symmetry exists, but it's not immediately obvious.
+We intuitively all the time. When we encounter a keyboard, it doesn't matter whether it's on a laptop, phone, or typewriter. We know what to expect when we press the keys because we're familiar with the essence of a keyboard. The fun often begins in situations when we suspect that symmetry exists, but it's not immediately obvious.
 
 >"A symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation."  -[Wikipedia entry on symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics))
 
