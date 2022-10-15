@@ -16,7 +16,7 @@ Here are some response maps from [a CERN sensor for high energy physics](https:/
 
 ![Response Maps](response-maps.png)
 
-Making a response map can very simple: Simply scan a small laser beam across the surface of the device and measure the electric current for each position. This works very well so long as the size of the spot is much smaller than the device.
+Making a response map can be easy: Simply scan a small laser beam across the surface of the device and measure the electric current that the device outputs for each position. This works very well so long as the size of the spot is much smaller than the device.
 
 There are cases when the laser spot is not as small as the scale that we wish to observe performance at. The smallest spot of light we can typically generate is limited by diffraction, so it ends up being an [Airy disk](https://en.wikipedia.org/wiki/Airy_disk), whose size increases with wavelength and decreases as numerical aperture is increased. For microsocpe objectives and visible wavelengths, Airy disk sizes on the order of microns are typical whereas a photodiode designer may wish to observe performance at scales that are an order of manitude or two finer than that.
 
