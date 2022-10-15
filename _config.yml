@@ -16,6 +16,6 @@ include:
 theme: jekyll-theme-cayman
 show_downloads: false
 google_analytics: G-THNRVSE8J8
-title: Deconvolution for Photodiode Response Maps
-description: Exploring the applicability of a microscopy tehcnique to semiconductor characterization
+title: Deconvolution to map photodiode response
+description: Applying a microscopy technique to semiconductor characterization
 
