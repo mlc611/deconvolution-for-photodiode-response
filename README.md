@@ -3,7 +3,7 @@ Physicists are trained to notice physical symmetry and exploit it to solve probl
 
 We all do this intuitively to some degree. When we encounter a keyboard, it doesn't matter whether it's on a laptop, phone, or typewriter. We know what to expect when we press the keys because we're familiar with the essence of a keyboard. The fun often begins when we suspect that symmetry exists, but it's not immediately obvious.
 
->"A symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation." [Wikipedia entry on symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics))
+>"A symmetry of a physical system is a physical or mathematical feature of the system (observed or intrinsic) that is preserved or remains unchanged under some transformation."  -[Wikipedia entry on symmetry](https://en.wikipedia.org/wiki/Symmetry_(physics))
 
 Here, we're going to explore the exsistence of symmetry between a problem in photodiode development and a problem in micrsocopy. If symmetry exists, then common image processing software employed in microscopy can be used to help us study photodiode behavior and improve designs and semiconductor processing techniques.
 
