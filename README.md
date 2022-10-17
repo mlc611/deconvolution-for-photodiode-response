@@ -193,5 +193,3 @@ We expect this technique may be useful when:
 1. We are able to move the projected light spot in step sizes as small as the features we wish to study.
 
 With so much [prior work](http://bigwww.epfl.ch/deconvolution/) in deconvolution for microscopy, it seems likely that existing algorithms could be adapted to this problem. Note that while deconvolution in microscopy is often thought of as widefield approach, [confocal implementations](https://doi.org/10.1002/jemt.20294) exist as well. Deconvolution algorithms used in confocal microscopy may be particularly relevant to characterizing photodiodes since the process of stepping a laser spot is essentially a confocal approach. In fact, the symmetry is so complete that one could consider generating a photodiode response map with a laser spot to be a form of confocal microscopy in which the measured signal is made of electrons from the device rather than photons from the sample.
-## Acknowledgements
-This idea was inspired by a discussion with Kevan and his work [performing deconvolution with signal-dependent PSFs in astronomy](https://arxiv.org/pdf/1805.09413.pdf).
